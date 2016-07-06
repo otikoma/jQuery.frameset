@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>IFRAMESET.JS </title>
+<script src="jquery.js"></script>
+<script src="jQuery.frameset.js"></script>
+</head>
+<body>
+	<div id="topframe" class="frameset" data-cols="250,*">
+		<div class="frame">
+			<iframe src="leftmenu.html"></iframe>
+		</div>
+		<div class="frameset" data-rows="100,*,50">
+			<div class="frame">
+				<iframe src="header.html"></iframe>
+			</div>
+			<div class="frame">
+				<iframe src="main.html"></iframe>
+			</div>
+			<div class="frame">
+				<iframe src="footer.html"></iframe>
+			</div>
+		</div>
+	</div>
+<button id="toggle" onclick="toggle()" style="position:fixed;bottom:30px;left:30px">&lt;&lt;</button>
+<script>
+var open = true;
+function toggle(){
+	if(open) {
+		$("#topframe").attr("data-cols","250,*");
+		resize_frames(false);
+		$("#toggle").text(">>");
+		open=false;
+	}else {
+		$("#topframe").attr("data-cols","0,*");
+		resize_frames(false);
+		$("#toggle").text("<<");
+		open=true;
+	}
+}
+</script>
+</body>
+</html>
